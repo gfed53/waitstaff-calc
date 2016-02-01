@@ -1,13 +1,71 @@
 <!DOCTYPE html>
-<html ng-app="" lang="en">
+<html ng-app="myApp" lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-	
+	<h1>Waitstaff Calculator</h1>
+	<div class="container">
+		<div class="row">
+			<section class="col-md-5 col-md-offset-1 meal-details">
+				<h2>Enter the Meal Details</h2>
+				<table>
+					<tr>
+						<td>Base Meal Price</td>
+						<td>$</td>
+						<td><input type="text" name="base-meal-price"></td>
+					</tr>
+					<tr>
+						<td>Tax Rate</td>
+						<td>%</td>
+						<td><input type="text" name="tax-rate"></td>
+					</tr>
+					<tr>
+						<td>Tip Percentage</td>
+						<td>%</td>
+						<td><input type="text" name="tip-percent"></td>
+					</tr>
+				</table>
+				<!-- <div><label for="base-meal-price">Base Meal Price</label>
+				<input type="text" name="base-meal-price">
+				</div>
+				<div>
+				<label for="tax-rate">Tax Rate</label>
+				<input type="text" name="tax-rate">
+				</div>
+				<div>
+				<label for="tip-percent">Tip Percentage</label>
+				<input type="text" name="tip-percent">
+				</div> -->
+				<div class="meal-detail-btns">
+					<input class="btn btn-default meal-detail-btn" type="submit" value="Submit">
+					<input class="btn btn-default meal-detail-btn" type="button" value="Cancel">
+				</div>
+			</section>
+			<div class="col-md-5 col-md-offset-1">
+				<section class="row cust-charges">
+					<h2>Customer Charges</h2>
+					<p>Subtotal: 0.00</p>
+					<p>Tip: 0.00</p>
+					<hr>
+					<p>Total: 0.00</p>
+				</section>
+				<section class="row earnings-info">
+					<h2>My Earnings Info</h2>
+					<p>Tip Total: 0.00</p>
+					<p>Meal Count: 0.00</p>
+					<p>Average Tip Per meal: 0.00</p>
+				</section>
+			</div>
+		</div>
+	</div>
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="apps/app.js"></script>
 </body>
 </html>
