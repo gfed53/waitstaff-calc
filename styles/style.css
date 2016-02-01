@@ -1,9 +1,20 @@
 section {
 	border: 1px solid black;
+	margin-bottom: 1.5em;
 }
 
 h1, h2 {
 	text-align: center;
+	padding: .5em;
+}
+
+h1 {
+	font-size: 4em;
+}
+
+h2 {
+	border-bottom: 1px solid black;
+
 }
 
 table {
@@ -15,6 +26,10 @@ td {
 	font-size: 1.3em;
 }
 
+.meal-details {
+	padding: 0;
+}
+
 .meal-detail-btns {
 	text-align: center;
 	margin: auto;
@@ -23,6 +38,9 @@ td {
 .btn {
 	margin: 1.5em;
 }
-/*input {
-	display: block;
-}*/
+
+.reset-btn {
+	float: right;
+	font-size: 1.3em;
+	padding: 0.6em 2em;
+}
