@@ -14,16 +14,21 @@ h1 {
 
 h2 {
 	border-bottom: 1px solid black;
+	font-size: 1.7em;
 
 }
 
-table {
+/*table {
 	margin: auto;
 }
 
 td {
 	padding: 0.5em;
 	font-size: 1.3em;
+}*/
+
+form, p {
+	margin: 1em;
 }
 
 .meal-details {
@@ -43,4 +48,5 @@ td {
 	float: right;
 	font-size: 1.3em;
 	padding: 0.6em 2em;
+	margin-top: 0.7em;
 }
