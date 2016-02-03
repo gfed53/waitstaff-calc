@@ -28,4 +28,23 @@ angular.module('myApp', ['ngMessages'])
 			$scope.avgTip = $scope.tipTotal / $scope.mealCount;
 		}								
 	};
+
+	$scope.cancel = function(){
+		$scope.baseMealPrice = '';
+		$scope.taxRate = '';
+		$scope.tipPercent = '';
+	};
+
+	$scope.reset = function(){
+		$scope.baseMealPrice = '';
+		$scope.taxRate = '';
+		$scope.tipPercent = '';
+		$scope.subTotal = 0;
+		$scope.tip = 0;
+		$scope.total = 0;
+		$scope.tipTotal = 0;
+		$scope.mealCount = 0;
+		$scope.avgTip = 0;
+	};
+
 });
