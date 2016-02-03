@@ -1,8 +1,10 @@
 angular.module('myApp', ['ngMessages'])
 .controller('myCtrl', function($scope){
 	$scope.baseMealPrice = '';
-	$scope.taxRate = '';
-	$scope.tipPercent = '';
+	$scope.taxRateTens = '';
+	// $scope.taxRate = $scope.taxRateTens*0.01;
+	$scope.test = (8/100);
+	$scope.tipPercentTens = '';
 	$scope.subTotal = 0;
 	$scope.tip = 0;
 	$scope.total = 0;
@@ -13,11 +15,14 @@ angular.module('myApp', ['ngMessages'])
 
 	$scope.submit = function(){
 		if($scope.myForm.$valid) {
+			//The field expects you to input an integer for the percentages, therefore we will convert them to fractions.
+			var taxRate = $scope.taxRateTens/100,
+			tipPercent = $scope.tipPercentTens/100;
 			//Combine base meal price and tax to get sub total.
-			var mealTax = $scope.baseMealPrice * $scope.taxRate;
+			var mealTax = $scope.baseMealPrice * taxRate;
 			$scope.subTotal = ($scope.baseMealPrice+mealTax);
 			//Calculate tip from tip percentage and add to subtotal.
-			var mealTip = $scope.subTotal * $scope.tipPercent;
+			var mealTip = $scope.subTotal * tipPercent;
 			$scope.tip = mealTip;
 			$scope.total = ($scope.subTotal+mealTip);
 			//Add the meal's tip to tip total.
@@ -31,14 +36,14 @@ angular.module('myApp', ['ngMessages'])
 
 	$scope.cancel = function(){
 		$scope.baseMealPrice = '';
-		$scope.taxRate = '';
-		$scope.tipPercent = '';
+		$scope.taxRateTens = '';
+		$scope.tipPercentTens = '';
 	};
 
 	$scope.reset = function(){
 		$scope.baseMealPrice = '';
-		$scope.taxRate = '';
-		$scope.tipPercent = '';
+		$scope.taxRateTens = '';
+		$scope.tipPercentTens = '';
 		$scope.subTotal = 0;
 		$scope.tip = 0;
 		$scope.total = 0;
