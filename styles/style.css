@@ -1,6 +1,12 @@
+body {
+	background-color: #f1c40f;
+}
+
 section {
-	border: 1px solid black;
+	border: 2px solid black;
 	margin-bottom: 1.5em;
+	border-radius: 1.5em;
+	background-color: #ecf0f1;
 }
 
 h1, h2 {
@@ -10,11 +16,13 @@ h1, h2 {
 
 h1 {
 	font-size: 4em;
+	font-style: italic;
 }
 
 h2 {
 	border-bottom: 1px solid black;
 	font-size: 1.7em;
+	font-weight: bold;
 
 }
 
@@ -29,6 +37,10 @@ td {
 
 form, p {
 	margin: 1em;
+}
+
+p {
+	font-weight: bold;
 }
 
 .meal-details {
@@ -50,3 +62,15 @@ form, p {
 	padding: 0.6em 2em;
 	margin-top: 0.7em;
 }
+
+footer {
+	border-top: 1px solid black;
+	margin-top: 1em;
+	padding-top: 2em;
+}
+
+footer p {
+	text-align: center;
+}
+
+
