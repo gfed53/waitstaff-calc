@@ -1,4 +1,21 @@
-angular.module('myApp', ['ngMessages'])
+angular.module('myApp', ['ngMessages', 'ngRoute'])
+.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.when('/', {
+		templateUrl : './home.html',
+		controller : 'myCtrl'
+	}).when('/new-meal', {
+		templateUrl : './new-meal.html',
+		controller: 'myCtrl'
+	}).when('/my-earnings', {
+		templateUrl : './my-earnings.html',
+		controller: 'myCtrl'
+	});
+		// .run(function($rootScope, $location) {
+//     $rootScope.$on('$routeChangeError', function() {
+//         $location.path('/error');
+//     });
+// })
+}])
 .controller('myCtrl', function($scope){
 	$scope.baseMealPrice = '';
 	$scope.taxRateTens = '';

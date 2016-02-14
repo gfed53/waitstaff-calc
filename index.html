@@ -6,101 +6,16 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="styles/style.css">
 </head>
-<body ng-controller="myCtrl">
+<body>
 	<h1>Waitstaff Calculator</h1>
-	<div class="container">
-		<div class="row">
-			<section class="col-md-5 col-md-offset-1 meal-details">
-				<h2>Enter the Meal Details</h2>
-				<form action="" name="myForm" class="form-horizontal">
-					<div class="form-group">
-						<label for="base-meal-price" class="col-sm-4">Base Meal Price $</label>
-						<div class="col-sm-8">
-							<input type="number" name="base-meal-price" ng-model="baseMealPrice" required>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="tax-rate" class="col-sm-4">Tax Rate %</label>
-						<div class="col-sm-8">
-							<input type="number" name="tax-rate" ng-model="taxRateTens" required>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="tip-percent" class="col-sm-4">Tip Percentage %</label>
-						<div class="col-sm-8">
-							<input type="number" name="tip-percent" ng-model="tipPercentTens" required>
-						</div>
-					</div>
-
-				</form>
-				<div class="meal-detail-btns">
-					<input class="btn btn-default meal-detail-btn" type="button" ng-click="submit()" value="Submit">
-					<input class="btn btn-default meal-detail-btn" type="button" ng-click="cancel()" value="Cancel">
-				</div>
-				<div class="error" ng-if="myForm.$invalid">
-					<p>Please make sure to fill out every field.
-					</div>
-				<!-- <form name="myForm" action="">
-					<table>
-						<tr>
-							<td>Base Meal Price</td>
-							<td>$</td>
-							<td><input type="number" name="base-meal-price" ng-model="baseMealPrice" required></td>
-						</tr>
-						<tr>
-							<td>Tax Rate</td>
-							<td>%</td>
-							<td><input type="number" name="tax-rate" ng-model="taxRateTens" required></td>
-						</tr>
-						<tr>
-							<td>Tip Percentage</td>
-							<td>%</td>
-							<td><input type="number" name="tip-percent" ng-model="tipPercentTens" required></td>
-						</tr>
-					</table>
-				
-				<div><label for="base-meal-price">Base Meal Price</label>
-				<input type="text" name="base-meal-price">
-				</div>
-				<div>
-				<label for="tax-rate">Tax Rate</label>
-				<input type="text" name="tax-rate">
-				</div>
-				<div>
-				<label for="tip-percent">Tip Percentage</label>
-				<input type="text" name="tip-percent">
-				</div>
-					<div class="meal-detail-btns">
-						<input class="btn btn-default meal-detail-btn" type="button" ng-click="submit()" value="Submit">
-						<input class="btn btn-default meal-detail-btn" type="button" ng-click="cancel()" value="Cancel">
-					</div>
-					<div class="error" ng-if="myForm.$invalid">
-						<p>Please make sure to fill out every field.
-					</div>
-				</form> -->
-			</section>
-			<div class="col-md-5 col-md-offset-1">
-				<section class="row cust-charges">
-					<h2>Customer Charges</h2>
-					<p>Subtotal: {{ subTotal | number: 2 }}</p>
-					<p>Tip: {{ tip | number: 2 }}</p>
-					<hr>
-					<p>Total: {{ total | number: 2 }}</p>
-				</section>
-				<section class="row earnings-info">
-					<h2>My Earnings Info</h2>
-					<p>Tip Total: {{ tipTotal | number: 2 }}</p>
-					<p>Meal Count: {{ mealCount }}</p>
-					<p>Average Tip Per meal: {{ avgTip | number: 2 }}</p>
-				</section>
-				<input class="btn btn-default reset-btn" type="button" ng-click="reset()" value="Reset">
-			</div>
-		</div>
-		<footer>
-			<p>By Greg Federico</p>
-			<p>2016</p>
-		</footer>
-	</div>
+	<a href="#/">Home</a>
+	<a href="#/new-meal">Enter New Meal</a>
+	<a href="#/my-earnings">My Earnings</a>
+	<div ng-view></div>
+	<footer>
+		<p>By Greg Federico</p>
+		<p>2016</p>
+	</footer>
 	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script><script type="text/javascript" src="bower_components/angular/angular.js"></script>
