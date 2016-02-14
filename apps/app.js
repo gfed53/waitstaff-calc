@@ -10,13 +10,19 @@ angular.module('myApp', ['ngMessages', 'ngRoute'])
 		templateUrl : './my-earnings.html',
 		controller: 'myCtrl'
 	});
-		// .run(function($rootScope, $location) {
-//     $rootScope.$on('$routeChangeError', function() {
-//         $location.path('/error');
-//     });
-// })
+	// Where does this go??
+	// .run(function($rootScope, $location) {
+	//     $rootScope.$on('$routeChangeError', function() {
+	//         $location.path('/');
+	//     });
+	// });
 }])
-.controller('myCtrl', function($scope){
+.run(function($rootScope){
+	$rootScope.tipTotal = 0;
+	$rootScope.mealCount = 0;
+	$rootScope.avgTip = 0;
+})
+.controller('myCtrl', function($scope, $rootScope){
 	$scope.baseMealPrice = '';
 	$scope.taxRateTens = '';
 	// $scope.taxRate = $scope.taxRateTens*0.01;
@@ -25,9 +31,7 @@ angular.module('myApp', ['ngMessages', 'ngRoute'])
 	$scope.subTotal = 0;
 	$scope.tip = 0;
 	$scope.total = 0;
-	$scope.tipTotal = 0;
-	$scope.mealCount = 0;
-	$scope.avgTip = 0;
+	
 
 
 	$scope.submit = function(){
@@ -43,11 +47,12 @@ angular.module('myApp', ['ngMessages', 'ngRoute'])
 			$scope.tip = mealTip;
 			$scope.total = ($scope.subTotal+mealTip);
 			//Add the meal's tip to tip total.
-			$scope.tipTotal += mealTip;
+			$rootScope.tipTotal += mealTip;
 			//Increase the meal count
-			$scope.mealCount += 1;
+			$rootScope.mealCount += 1;
 			//Calculate average tip per meal.
-			$scope.avgTip = $scope.tipTotal / $scope.mealCount;
+			$rootScope.avgTip = $rootScope.tipTotal / $rootScope.mealCount;
+			console.log($rootScope.tipTotal);
 		}								
 	};
 
