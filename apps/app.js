@@ -12,15 +12,16 @@ angular.module('myApp', ['ngMessages', 'ngRoute'])
 	});
 	// Where does this go??
 	// .run(function($rootScope, $location) {
-	//     $rootScope.$on('$routeChangeError', function() {
-	//         $location.path('/');
-	//     });
+	//     
 	// });
 }])
-.run(function($rootScope){
+.run(function($rootScope, $location){
 	$rootScope.tipTotal = 0;
 	$rootScope.mealCount = 0;
 	$rootScope.avgTip = 0;
+	$rootScope.$on('$routeChangeError', function() {
+	        $location.path('/');
+	    });
 })
 .controller('myCtrl', function($scope, $rootScope){
 	$scope.baseMealPrice = '';
