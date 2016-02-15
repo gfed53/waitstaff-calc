@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngMessages', 'ngRoute'])
+angular.module('myApp', ['ngMessages', 'ngRoute', 'ngAnimate'])
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl : './home.html',
@@ -15,13 +15,21 @@ angular.module('myApp', ['ngMessages', 'ngRoute'])
 	//     
 	// });
 }])
-.run(function($rootScope, $location){
+.run(function($rootScope, $location, $timeout){
 	$rootScope.tipTotal = 0;
 	$rootScope.mealCount = 0;
 	$rootScope.avgTip = 0;
 	$rootScope.$on('$routeChangeError', function() {
 	        $location.path('/');
 	    });
+	$rootScope.$on('$routeChangeStart', function() {
+        $rootScope.isLoading = true;
+    });
+    $rootScope.$on('$routeChangeSuccess', function() {
+      $timeout(function() {
+        $rootScope.isLoading = false;
+      }, 1000);
+    });
 })
 .controller('myCtrl', function($scope, $rootScope){
 	$scope.baseMealPrice = '';
@@ -64,15 +72,16 @@ angular.module('myApp', ['ngMessages', 'ngRoute'])
 	};
 
 	$scope.reset = function(){
-		$scope.baseMealPrice = '';
-		$scope.taxRateTens = '';
-		$scope.tipPercentTens = '';
-		$scope.subTotal = 0;
-		$scope.tip = 0;
-		$scope.total = 0;
-		$scope.tipTotal = 0;
-		$scope.mealCount = 0;
-		$scope.avgTip = 0;
+		// As of now, scope variables of myCtrl reset on view switch as is.
+		// $scope.baseMealPrice = '';
+		// $scope.taxRateTens = '';
+		// $scope.tipPercentTens = '';
+		// $scope.subTotal = 0;
+		// $scope.tip = 0;
+		// $scope.total = 0;
+		$rootScope.tipTotal = 0;
+		$rootScope.mealCount = 0;
+		$rootScope.avgTip = 0;
 	};
 
 });
