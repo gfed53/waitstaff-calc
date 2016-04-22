@@ -1,15 +1,15 @@
 body, html { position:relative; min-height:100%; }
 
-body {
+/*body {
 	background-color: #f1c40f;
-}
+}*/
 
-section, .directions {
+/*section, .directions {
 	border: 2px solid black;
 	margin-bottom: 1.5em;
 	border-radius: 1.5em;
-	background-color: #ecf0f1;
-}
+	background-color: rgba(241, 184, 15, 0.36);
+}*/
 
 h1, h2, .masthead p {
 	text-align: center;
@@ -36,8 +36,6 @@ p {
 
 ul {
 	text-align: center;
-	/*max-width: 40em;*/
-	/*margin: auto;*/
 }
 
 ul li {
@@ -86,24 +84,10 @@ footer p {
 
 /*Animations*/
 
-/*.loading {
-  position:relative;
-  height:100%;
+.animate-view-container { 
+	position:relative; 
+	/*min-height: 100%; */
 }
-.loading:before {
-  position:absolute;
-  content:"";
-  left:0;
-  bottom:0;
-  right:0;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,0.9) no-repeat center center;
-  background-image: url('./loading-animation.gif');
-}*/
-/* .animate-view-container { position:relative; min-height: 100%; } */
-
-.animate-view-container { position:relative; min-height: 100%; }
 .animate-view {
     transition:1s linear all;
     position:absolute;
