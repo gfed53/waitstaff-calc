@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
-	border-bottom: 1px solid black;
+	/*border-bottom: 1px solid black;*/
 	font-size: 1.7em;
 	font-weight: bold;
 	padding: .5em;
@@ -61,15 +61,18 @@ form, p {
 	margin: auto;
 }
 
-.btn {
+/*.meal-detail-btn {
+	margin: 1.5em;
+}*/
+
+.my-btn {
 	margin: 1.5em;
 }
 
 .reset-btn {
-	/*float: right;*/
+	width: 6em;
 	font-size: 1.3em;
-	padding: 0.6em 2em;
-	/*margin-top: 0.7em;*/
+	/*margin-top: 1.5em;*/
 }
 
 footer {

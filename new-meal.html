@@ -23,8 +23,8 @@
 		</div>
 	</form>
 	<div class="meal-detail-btns">
-		<input class="btn btn-default meal-detail-btn" type="button" ng-click="submit()" value="Submit">
-		<input class="btn btn-default meal-detail-btn" type="button" ng-click="cancel()" value="Cancel">
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect my-btn meal-detail-btn" ng-click="submit()">Submit</button>
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect my-btn meal-detail-btn" ng-click="cancel()">Cancel</button>
 	</div>
 	<div class="error" ng-if="myForm.$invalid">
 		<p>Please make sure to fill out every field.
