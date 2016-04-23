@@ -1,9 +1,7 @@
-<!-- To be refactored.. -->
-
 <section class="meal-details">
 	<h2>Enter the Meal Details</h2>
 	<!-- Simple Textfield -->
-	<form action="" name="myForm">
+	<form action="" name="myForm" id="details-form">
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<input class="mdl-textfield__input" type="number" name="base-meal-price" ng-model="baseMealPrice" required>
 			<label for="base-meal-price" class="mdl-textfield__label">Base Meal Price $</label>
@@ -32,4 +30,3 @@
 		<hr>
 		<p>Total: {{ total | number: 2 }}</p>
 	</section>
-

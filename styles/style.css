@@ -1,23 +1,18 @@
 body, html { position:relative; min-height:100%; }
 
-h1, h2, .masthead p {
+h1, h2, .masthead p, #details-form, .earnings-info, .cust-charges {
 	text-align: center;
 }
 
-h1 {
-	font-size: 4em;
-	font-style: italic;
-	padding: .5em;
+.masthead, .mdl-layout-title, .mdl-navigation__link {
+	font-weight: bold;
 }
 
 h2 {
-	/*border-bottom: 1px solid black;*/
 	font-size: 1.7em;
 	font-weight: bold;
 	padding: .5em;
 }
-
-
 
 p {
 	font-weight: bold;
@@ -50,10 +45,6 @@ form, p {
 	margin: auto;
 }
 
-/*.meal-detail-btn {
-	margin: 1.5em;
-}*/
-
 .my-btn {
 	margin: 1.5em;
 }
@@ -61,7 +52,6 @@ form, p {
 .reset-btn {
 	width: 6em;
 	font-size: 1.3em;
-	/*margin-top: 1.5em;*/
 }
 
 footer {
@@ -75,10 +65,8 @@ footer p {
 }
 
 /*Animations*/
-
 .animate-view-container { 
 	position:relative; 
-	/*min-height: 100%; */
 }
 .animate-view {
     transition:1s linear all;

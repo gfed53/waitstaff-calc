@@ -10,10 +10,6 @@ angular.module('myApp', ['ngMessages', 'ngRoute', 'ngAnimate'])
 		templateUrl : './my-earnings.html',
 		controller: 'myCtrl'
 	});
-	// Where does this go??
-	// .run(function($rootScope, $location) {
-	//     
-	// });
 }])
 .run(function($rootScope, $location, $timeout){
 	$rootScope.tipTotal = 0;
@@ -34,7 +30,6 @@ angular.module('myApp', ['ngMessages', 'ngRoute', 'ngAnimate'])
 .controller('myCtrl', function($scope, $timeout, $rootScope){
 	$scope.baseMealPrice = '';
 	$scope.taxRateTens = '';
-	// $scope.taxRate = $scope.taxRateTens*0.01;
 	$scope.test = (8/100);
 	$scope.tipPercentTens = '';
 	$scope.subTotal = 0;
@@ -43,7 +38,6 @@ angular.module('myApp', ['ngMessages', 'ngRoute', 'ngAnimate'])
 
 	$scope.submit = function(){
 		if($scope.myForm.$valid) {
-			//The field expects you to input an integer for the percentages, therefore we will convert them to fractions.
 			var taxRate = $scope.taxRateTens/100,
 			tipPercent = $scope.tipPercentTens/100;
 			//Combine base meal price and tax to get sub total.
@@ -62,27 +56,17 @@ angular.module('myApp', ['ngMessages', 'ngRoute', 'ngAnimate'])
 			console.log($rootScope.tipTotal);
 		}								
 	};
-
 	$scope.cancel = function(){
 		$scope.baseMealPrice = '';
 		$scope.taxRateTens = '';
 		$scope.tipPercentTens = '';
 	};
-
 	$scope.reset = function(){
-		// As of now, scope variables of myCtrl reset on view switch as is.
-		// $scope.baseMealPrice = '';
-		// $scope.taxRateTens = '';
-		// $scope.tipPercentTens = '';
-		// $scope.subTotal = 0;
-		// $scope.tip = 0;
-		// $scope.total = 0;
 		$rootScope.tipTotal = 0;
 		$rootScope.mealCount = 0;
 		$rootScope.avgTip = 0;
 	};
 	//So MDL can work
-
 	$scope.$on('$viewContentLoaded', () => {
 		$timeout(() => {
 			componentHandler.upgradeAllRegistered();
