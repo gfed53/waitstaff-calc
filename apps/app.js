@@ -26,6 +26,14 @@ angular.module('myApp', ['ngMessages', 'ngRoute', 'ngAnimate'])
 			$rootScope.isLoading = false;
 		}, 1000);
 	});
+	// Hide the drawer on route change
+	$(function(){
+		$(".mdl-navigation__link").on("click", function(){
+			$(".mdl-layout__drawer").removeClass("is-visible").attr("aria-hidden", "true");
+			$(".mdl-layout__drawer-button").attr("aria-expanded", "false");
+			$(".mdl-layout__obfuscator").removeClass("is-visible");
+		});
+	});
 })
 .controller('myCtrl', function($scope, $timeout, $rootScope){
 	$scope.baseMealPrice = '';
