@@ -45,6 +45,10 @@ form, p {
 	margin: auto;
 }
 
+.error p {
+	text-align: center;
+}
+
 .my-btn {
 	margin: 1.5em;
 }
@@ -62,6 +66,28 @@ footer {
 
 footer p {
 	text-align: center;
+}
+
+/*MDL Alterations*/
+.mdl-layout__header,
+.mdl-button--raised.mdl-button--colored {
+	color: white;
+}
+.mdl-layout__header-row .mdl-navigation__link {
+	color: white;
+	padding: 0 0.5em;
+}
+
+.mdl-textfield.is-invalid .mdl-textfield__input {
+	border-color: black;
+}
+
+.mdl-textfield.is-invalid .mdl-textfield__label:after {
+	background-color: rgb(76,175,80);
+}
+
+.mdl-textfield--floating-label.is-invalid .mdl-textfield__label {
+	color: black;
 }
 
 /*Animations*/
